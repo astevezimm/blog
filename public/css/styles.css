@@ -1,7 +1,20 @@
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+body {
+    background-color: #FAF3E3;
+    background-image: linear-gradient(to right, #dacba8, #FAF3E3);
 }
+
+.subtitle {
+    background-image: linear-gradient(to right, #1A4D2E , black);
+    margin-top: 0;
+}
+
+.subtitle-text {
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #dacba8;
+}
+
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -10,9 +23,14 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    background-color: black;
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #FF9F29 !important;
+}
+.navbar-brand {
+    font-size: 5rem;
+    color: #FF9F29 !important;
 }
 
 .footer-padding {
@@ -25,7 +43,7 @@
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #1abc9c;
+	background-color: #FF9F29;
 }
 
 .footer p {
