@@ -1,7 +1,7 @@
 ﻿const mongoose = require("mongoose");
 const _ = require("lodash");
 
-mongoose.connect("mongoose://localhost:27017/blogDB"/*, {useNewUrlParser: true}*/);
+mongoose.connect("mongodb://localhost:27017/blogDB"/*, {useNewUrlParser: true}*/);
 
 Post = mongoose.model("Post", {
     title: String,
