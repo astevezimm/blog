@@ -1,6 +1,7 @@
 body {
     background-color: #FAF3E3;
     background-image: linear-gradient(to right, #dacba8, #FAF3E3);
+    font-family: 'Work Sans', sans-serif;
 }
 
 .subtitle {
@@ -21,7 +22,7 @@ body {
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 1.5rem;
     letter-spacing: 5px;
     background-color: black;
 }
@@ -29,8 +30,9 @@ body {
     color: #FF9F29 !important;
 }
 .navbar-brand {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #FF9F29 !important;
+    font-family: 'Pacifico', cursive;
 }
 
 .footer-padding {
