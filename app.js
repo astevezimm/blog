@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const data = require("./my_modules/data");
 require("ejs");
+const os = require("os");
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -12,15 +13,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res) =>{
-  data.findAll((posts) => { res.render("home", {posts: posts}); });
+  res.render("home");
 })
 
-app.get("/about", (req, res) =>{
-  res.render("about");
+app.get("/blog", (req, res) =>{
+  data.findAll((posts) => { res.render("blog", {posts: posts}); });
 })
 
-app.get("/contact", (req, res) =>{
-  res.render("contact");
+app.get("/web-demos", (req, res) =>{
+  res.render("webDemos");
+})
+
+app.get("/unity-demos", (req, res) =>{
+  res.render("unityDemos");
 })
 
 app.get("/compose", (req, res) =>{
@@ -28,7 +33,7 @@ app.get("/compose", (req, res) =>{
 })
 
 app.post("/compose", (req, res) => {
-  data.add(req.body.title, req.body.content, () => res.redirect("/"));
+  data.add(req.body.title, req.body.content, () => res.redirect("/blog"));
 })
 
 app.get("/posts/:title", (req, res) => {
