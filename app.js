@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const data = require("./my_modules/data");
 require("ejs");
-const os = require("os");
 
 const port = process.env.PORT || 3000;
 const app = express();
