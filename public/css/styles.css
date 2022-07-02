@@ -1,3 +1,5 @@
+
+
 body {
     background-color: #FAF3E3;
     background-image: linear-gradient(to right, #dacba8, #FAF3E3);
@@ -35,12 +37,35 @@ body {
     color: #FF9F29 !important;
 }
 
-a {
+.navbar-brand a {
     color: #FF9F29;
 }
-a:hover {
+.navbar-brand a:hover {
     color: #dacba8;
     text-decoration: none;
+}
+
+.container {
+    position: relative;
+}
+
+.navbar-toggler {
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ham:hover {
+    border: solid #1A4D2E;
+}
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+.navbar-collapse {
+    border: none;
 }
 
 .footer-padding {
