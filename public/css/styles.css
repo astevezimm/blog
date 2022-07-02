@@ -31,8 +31,16 @@ body {
 }
 .navbar-brand {
     font-size: 3rem;
-    color: #FF9F29 !important;
     font-family: 'Pacifico', cursive;
+    color: #FF9F29 !important;
+}
+
+a {
+    color: #FF9F29;
+}
+a:hover {
+    color: #dacba8;
+    text-decoration: none;
 }
 
 .footer-padding {
