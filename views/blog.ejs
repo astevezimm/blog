@@ -1,4 +1,6 @@
-<%- include("partials/header", {pageTitle: "Blog", link: "/blog"}) -%>
+<%- include("partials/header", {pageTitle: "Blog",
+                                link: "/blog",
+                                subTitle: "Welcome to my thoughts and musings!"}) -%>
 <% for(post of posts) { %>
     <h1><%= post.title %></h1>
     <p><%= post.content.slice(0, 100) %> &#8230; <a href="/posts/<%= post.title %>">Read More</a></p>
