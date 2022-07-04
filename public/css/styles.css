@@ -128,18 +128,23 @@ body {
     background-image: linear-gradient(to right, #1A4D2E, #FAF3E3);
 }
 
-.misc h3 {
+.sect-w-img h2, .sect-w-img h3 {
     display: inline-block;
     vertical-align: middle;
     margin-left: 50px;
 }
-.misc img {
+.sect-w-img img {
     border-radius: 100%;
     width: 15%;
 }
-
+.sect-w-img a {
+    font-size: 2rem;
+}
 @media (max-width: 1199px) {
-    .misc img {
+    .sect-w-img h2, .sect-w-img h3 {
+        margin-left: 0;
+    }
+    .sect-w-img img {
         display: none;
     }
 }
