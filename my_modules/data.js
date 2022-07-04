@@ -8,12 +8,7 @@ Post = mongoose.model("Post", {
     content: String,
     url: String,
     date: Date,
-    categories: [mongoose.ObjectId]
-});
-
-Category = mongoose.model("Category", {
-    name: String,
-    posts: [mongoose.ObjectId]
+    category: String
 });
 
 module.exports.findAll = (callback) =>
@@ -28,8 +23,11 @@ module.exports.findAll = (callback) =>
         });
 }
 
-module.exports.add = (title, content, callback) => {
-    const post = new Post({title: title, content: content, url: _.kebabCase(title), date: Date.now()});
+module.exports.add = (title, content, category, callback) => {
+    if (!category)
+        category = "Un-filed";
+    const post =
+        new Post({title: title, content: content, url: _.kebabCase(title), date: Date.now(), category: category});
     post.save((err) => {
         if (err)
             console.log(err);
@@ -45,4 +43,14 @@ module.exports.findOne = (title, callback) => {
         else
             callback(post);
     });
+}
+
+module.exports.update = (title, content, category, callback) => {
+    if (!category)
+        category = "Un-filed";
+    // to be implemented
+}
+
+module.exports.findByCategory = (category, callback) => {
+    // to be implemented
 }
