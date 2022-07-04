@@ -1,40 +1,104 @@
 <%- include("partials/header", {pageTitle: "About Me",
                                 link: "",
                                 subTitle: "Allow me to introduce myself..."}) -%>
-<h1>Skills</h1>
-<ul>
-    <li>HTML / CSS / Javascript</li>
-    <li>Bootstrap</li>
-    <li>jQuery</li>
-    <li>NodeJS / Express / EJS</li>
-    <li>React</li>
-    <li>SQL</li>
-    <li>MongoDB</li>
-    <li>Motoko(ICP)</li>
-    <li>Python</li>
-    <li>C#</li>
-    <li>Unity3D</li>
-    <li>Git / Github</li>
-</ul>
-<h1>Education</h1>
-    <h2>Udemy</h2>
-    <h3>The Complete 2022 Web Development Bootcamp</h3>
+<div class="profile">
+    <img  src="/images/profile.jpg" alt="Profile Pic">
+</div>
 
-    <h2>Brigham Young University</h2>
-    <h3>Computer Science BS</h3>
+<div class="skills">
+    <h1>Skills</h1>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>HTML / CSS</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Javascript</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Bootstrap</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>jQuery</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>NodeJS / Express</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>EJS</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>React</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>SQL</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>MongoDB</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Motoko(ICP)</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Python</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>C#</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Unity3D</h3>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <h3>Git / Github</h3>
+        </div>
+    </div>
+</div>
 
-<h1>Experience</h1>
-    <h2>Ancestry.com</h2>
-    <p>Checked integrity of genealogical data and processed it to the website.</p>
+<div class="section">
+    <h1>Education</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Udemy</h2>
+            <h3><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" target="_blank">
+                    The Complete 2022 Web Development Bootcamp
+                </a></h3>
+        </div>
+        <div class="col-md-6">
+            <h2>Brigham Young University</h2>
+            <h3>Computer Science BS</h3>
+        </div>
+    </div>
+</div>
 
-    <h2>BYU Physics Department</h2>
-    <p>Data visualization / number crunching for x-ray diffraction research.</p>
+<div class="section even">
+    <h1>Experience</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Ancestry.com <em>2008-2013</em></h2>
+            <h3>Content Engineer / Data Quality</h3>
+            <h4>Checked integrity of genealogical data and processed it to the website.</h4>
+        </div>
+        <div class="col-md-6">
+            <h2>BYU Physics Department <em>2007-2008</em></h2>
+            <h3>Programmer</h3>
+            <h4>Data visualization / number crunching for x-ray diffraction research.</h4>
+        </div>
+    </div>
+</div>
 
-<h1>Unity Projects</h1>
-    <h2>Puzzle Cube / Chess / Slider Puzzle / 4 Moons</h2>
-    <a href="/unity-demos">Check them out here!</a>
-
-<h1>Miscellaneous</h1>
-    <p>Completed 2 fantasy novels, 2 of my shot stories received honorable mention in Writers of the Future, and I created a few board game prototypes.</p>
-
+<div class="section">
+    <h1>Unity Projects</h1>
+        <h2>Puzzle Cube / Chess / Slider Puzzle / 4 Moons</h2>
+        <h3><a href="/unity-demos">Check them out here!</a></h3>
+</div>
+    
+<div class="section even misc">
+    <h1>Miscellaneous</h1>
+    <img src="/images/me-and-leila.jpg" alt="Me and Leila">
+    <h3>Completed 2 fantasy novels<br>
+        2 short stories gained honorable mention in <a href="https://www.writersofthefuture.com/" target="_blank">
+                                                        Writers of the Future
+                                                    </a><br>
+        Created a few board game prototypes.</h3>
+</div>
+    
 <%- include("partials/footer") -%>

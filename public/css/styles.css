@@ -75,6 +75,70 @@ body {
     border: none;
 }
 
+.content h1 {
+    text-shadow: 1px 1px 2px black;
+    color: #dacba8;
+    font-size: 5rem;
+    background-image: linear-gradient(to right, #FF9F29, #FAF3E3);
+    padding: 10px;
+    border-radius: 20% 0 0 20%;
+}
+
+.profile {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.profile img {
+    border-radius: 100%;
+}
+
+.skills {
+    background-color: #FF9F29;
+    padding: 5px 25px 65px;
+    border: solid #1A4D2E 20px;
+    border-radius: 25%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+.skills h1 {
+    text-align: center;
+    background-image: unset;
+    padding: 0;
+}
+.skills h3 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px #dacba8;
+}
+@media (max-width: 767px) {
+    .skills h3 {
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .skills {
+        padding-bottom: 10px;
+    }
+}
+
+.section {
+    margin-bottom: 100px;
+}
+.even h1 {
+    background-image: linear-gradient(to right, #1A4D2E, #FAF3E3);
+}
+
+.misc h3 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 50px;
+}
+.misc img {
+    border-radius: 100%;
+    width: 15%;
+    
+}
+
 .footer {
 	text-align: center;
 	bottom: 0;
