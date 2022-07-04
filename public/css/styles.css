@@ -136,7 +136,12 @@ body {
 .misc img {
     border-radius: 100%;
     width: 15%;
-    
+}
+
+@media (max-width: 1199px) {
+    .misc img {
+        display: none;
+    }
 }
 
 .footer {
