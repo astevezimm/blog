@@ -5,4 +5,24 @@
     <h1><%= post.title %></h1>
     <p><%= post.content.slice(0, 100) %> &#8230; <a href="/posts/<%= post.title %>">Read More</a></p>
 <% } %>
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="post">
+            <h3>What's With Holes in Swiss Cheese?</h3>
+            <h4><%= new Date().toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %></h4>
+            <h4 class="category"><em>Category: Inspirationally Inspirational</em></h4>
+            <img width="95%" src="images/profile.jpg" alt="post image">
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="post post-even">
+            <h3>What's With Holes in Swiss Cheese?</h3>
+            <h4><%= new Date().toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %></h4>
+            <h4 class="category"><em>Category: Inspirationally Inspirational</em></h4>
+            <img width="95%" src="images/profile.jpg" alt="post image">
+        </div>
+    </div>
+</div>
+
 <%- include("partials/footer") -%>

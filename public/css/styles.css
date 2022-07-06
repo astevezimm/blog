@@ -65,7 +65,7 @@ body {
 .ham:hover {
     border: solid #1A4D2E;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .navbar-toggler {
         display: none;
     }
@@ -147,6 +147,35 @@ body {
     .sect-w-img img {
         display: none;
     }
+}
+
+.post {
+    text-shadow: 1px 1px 2px black;
+    color: #dacba8;
+    background-image: linear-gradient(to bottom, #FF9F29, #FAF3E3);
+    max-width: 400px;
+    text-align: center;
+    border-radius: 5% 5% 0 0;
+}
+.post h3 {
+    padding-top: 10px;
+    height: 63px;
+}
+.post-even {
+    background-image: linear-gradient(to bottom, #1A4D2E, #FAF3E3);
+}
+.post:hover {
+    border: solid 5px #1A4D2E;
+    cursor: pointer;
+    color: black;
+}
+@media (max-width: 767px) {
+    .post {
+        margin: 0 auto;
+    }
+}
+.category {
+    height: 40px;
 }
 
 .footer {
