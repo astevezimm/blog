@@ -27,14 +27,6 @@ app.get("/unity-demos", (req, res) =>{
   res.render("unityDemos");
 })
 
-app.get("/compose", (req, res) =>{
-  res.render("compose");
-})
-
-app.post("/compose", (req, res) => {
-  data.add(req.body.title, req.body.content, req.body.category, () => res.redirect("/blog"));
-})
-
 app.get("/update/:title", (req, res) =>{
   data.findOne(req.params.title, (post) =>
       res.render("compose", {title: post.title, content: post.content}));
@@ -49,8 +41,8 @@ app.get("/posts/:title", (req, res) => {
     res.render("post", {title: post.title, content: post.content}));
 })
 
-app.get("/categories/:category", (req, res) =>{
+/*app.get("/categories/:category", (req, res) =>{
   data.findByCategory(req.params.category, (posts) => res.render("blog", {posts: posts}));
-})
+})*/
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
