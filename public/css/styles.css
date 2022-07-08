@@ -191,8 +191,12 @@ a:hover {
 }
 
 .post-cat {
-    margin-left: 50px;
     margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+    .post-cat {
+        margin-left: 50px;
+    }
 }
 
 .footer {
