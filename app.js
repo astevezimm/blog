@@ -29,7 +29,7 @@ app.get("/unity-demos", (req, res) =>{
 
 app.get("/posts/:title", (req, res) => {
   data.findOne(req.params.title, (post) =>
-    res.render("post", {title: post.title, content: post.content}));
+    res.render("post", {post}));
 })
 
 /*app.get("/categories/:category", (req, res) =>{

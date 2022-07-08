@@ -12,7 +12,6 @@ function styleEvenPosts() {
     const posts = $(".post");
     if (posts) {
         const size = window.innerWidth;
-        console.log(size);
         const postsPerRow = size >= 1200 ? 4 : size >= 992 ? 3 : size >= 768 ? 2 : 1;
         for (let post = 0, row = 0; post < posts.length; row++)
             for (let col = 0; post < posts.length && col < postsPerRow; col++, post++) {

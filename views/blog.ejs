@@ -3,14 +3,14 @@
                                 subTitle: "Welcome to my thoughts and musings!"}) -%>
 
  <div class="row">
-    <% for(post of posts) { %>
+    <% for(let i = 0; i < posts.length; i++) { %>
         <div class="col-lg-3 col-md-4 col-sm-6">
-            <a href="/posts/<%= post.title %>">
+            <a href="/posts/<%= posts[i].url %>">
                 <div class="post">
-                    <h3><%= post.title %></h3>
-                    <h4><%= post.date.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %></h4>
-                    <h4 class="category"><em>Category: <%= post.category %></em></h4>
-                    <img width="95%" src="images/profile.jpg" alt="post image">
+                    <h3><%= posts[i].title %></h3>
+                    <h4><%= posts[i].date.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %></h4>
+                    <h4 class="category"><em>Category: <%= posts[i].category %></em></h4>
+                    <img width="95%" src=<%="images/blog/i" + String(i).padStart(3, '0') + ".png"%> alt="post image">
                 </div>
             </a>
         </div>
