@@ -1,6 +1,161 @@
 <%- include("partials/header", {pageTitle: "Web Demos",
                                 link: "web-demos",
-                                subTitle: "Here I show off small web apps."}) -%>
-<h1>Web Demos</h1>
-<p>web demos content</p>
+                                subTitle: "Here I show off small frontend apps."}) -%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<div class="section">
+    <h1>Simon Say's</h1>
+
+    <style>
+        .simon {
+            text-align: center;
+            background-color: #011F3F;
+            padding: 50px 0;
+        }
+        #level-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 3rem;
+            color: #FEF2BF;
+            margin: 50px;
+        }
+        .simon-content {
+            display: block;
+            width: 600px;
+            margin: auto;
+        }
+        .simon-btn {
+            margin: 25px;
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            border: 10px solid black;
+            border-radius: 20%;
+        }
+        @media (max-width: 767px) {
+            .simon-content {
+                width: 400px;
+            }
+            .simon-btn {
+                height: 150px;
+                width: 150px;
+                margin: 15px;
+            }
+        }
+        
+        .game-over {
+            background-color: red;
+            opacity: 0.8;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .pressed {
+            box-shadow: 0 0 20px white;
+            background-color: grey;
+        }
+    </style>
+    <div class = "simon">
+        <h2 id="level-title">Press A Key to Start</h2>
+        <div class="simon-content">
+            <div type="button" id="green" class="simon-btn green">
+            </div>
+    
+            <div type="button" id="red" class="simon-btn red">
+            </div>
+            <div type="button" id="yellow" class="simon-btn yellow">
+            </div>
+            
+            <div type="button" id="blue" class="simon-btn blue">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let pattern;
+        let buttons = ["green", "red", "yellow", "blue"];
+        let currentButton;
+
+        let audio = {"green":null, "red":null, "yellow":null, "blue":null, "wrong":null};
+
+        let gameRunning = false;
+        let inputActive = false;
+        
+        $(() => {
+            $(document).keydown(startGame);
+            $(".simon-btn").click(function(){ validateInput(this.id) });
+        });
+
+        function startGame() {
+            if (gameRunning)
+                return;
+            gameRunning = true;
+            pattern = [];
+            selectNextColor();
+        }
+
+        function selectNextColor() {
+            let button = buttons[Math.floor(Math.random() * 4)];
+            pattern.push(button);
+            setTitle(`Level ${pattern.length}`);
+            animateButtonPress(button);
+            buttonSFX(button);
+            currentButton = 0;
+            inputActive = true;
+        }
+
+        function validateInput(id) {
+            if (!inputActive)
+                return;
+            if (id === pattern[currentButton]) {
+                animateButtonPress(id);
+                buttonSFX(id);
+                currentButton++;
+                if (currentButton === pattern.length) {
+                    inputActive = false;
+                    setTimeout(selectNextColor, 500);
+                }
+            }
+            else {
+                setTitle("Game Over, Press Any Key to Restart");
+                let body = $(".simon");
+                body.addClass("game-over");
+                setTimeout(function(){body.removeClass("game-over");}, 100);
+                animateButtonPress(id);
+                buttonSFX("wrong");
+                gameRunning = false;
+                inputActive = false;
+            }
+        }
+
+        function animateButtonPress(id) {
+            let button = $(`#${id}`);
+            button.addClass("pressed");
+            setTimeout(function(){button.removeClass("pressed");}, 100);
+        }
+
+        function buttonSFX(button) {
+            let sound = audio[button];
+            if (sound === null) {
+                sound = new Audio(`sounds/${button}.mp3`);
+                audio[button] = sound;
+            }
+            sound.play();
+        }
+
+        function setTitle(text) {
+            $("#level-title").text(text);
+        }
+    </script>
+</div>
+
+<h1>Mad Lib</h1>
+
 <%- include("partials/footer") -%>
