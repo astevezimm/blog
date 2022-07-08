@@ -6,6 +6,10 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .header {
     position: fixed;
     width: 100%;
@@ -49,7 +53,6 @@ body {
 }
 .navbar-brand a:hover {
     color: #dacba8;
-    text-decoration: none;
 }
 
 .container {
@@ -165,9 +168,12 @@ body {
     background-image: linear-gradient(to bottom, #1A4D2E, #FAF3E3);
 }
 .post:hover {
-    border: solid 5px #1A4D2E;
     cursor: pointer;
     color: black;
+    background-image: linear-gradient(to bottom, #FF9F29, black);
+}
+.post-even:hover {
+    background-image: linear-gradient(to bottom, #1A4D2E, black);
 }
 @media (max-width: 767px) {
     .post {
@@ -194,6 +200,10 @@ body {
 	font-size: 15px;
     color: #fff;
     padding-bottom: 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
 
 .publish-button {
