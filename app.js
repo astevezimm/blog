@@ -27,15 +27,6 @@ app.get("/unity-demos", (req, res) =>{
   res.render("unityDemos");
 })
 
-app.get("/update/:title", (req, res) =>{
-  data.findOne(req.params.title, (post) =>
-      res.render("compose", {title: post.title, content: post.content}));
-})
-
-app.post("/update", (req, res) => {
-  data.update(req.body.title, req.body.content, req.body.category,() => res.redirect("/blog"));
-})
-
 app.get("/posts/:title", (req, res) => {
   data.findOne(req.params.title, (post) =>
     res.render("post", {title: post.title, content: post.content}));
