@@ -32,6 +32,16 @@ app.get("/posts/:title", (req, res) => {
     res.render("post", {post}));
 })
 
+app.get("/posts/:title/prev", (req, res) => {
+  data.findPrev(req.params.title, (post) =>
+      res.render("post", {post}));
+})
+
+app.get("/posts/:title/next", (req, res) => {
+  data.findNext(req.params.title, (post) =>
+      res.render("post", {post}));
+})
+
 /*app.get("/categories/:category", (req, res) =>{
   data.findByCategory(req.params.category, (posts) => res.render("blog", {posts: posts}));
 })*/
