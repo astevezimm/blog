@@ -41,6 +41,16 @@
                 margin: 15px;
             }
         }
+        .simon-settings {
+            font-size: 3rem;
+            margin-left: 10px;
+        }
+        .simon-settings input {
+            transform: scale(2);
+        }
+        .simon-settings label {
+            margin-right: 50px;
+        }
         
         .game-over {
             background-color: red;
@@ -63,6 +73,14 @@
             background-color: grey;
         }
     </style>
+    
+    <div class="simon-settings">
+        <input id="active" type="checkbox">
+        <label>Active</label>
+        <input id="sound-on" type="checkbox">
+        <label>Sound on</label>
+    </div>
+    
     <div class = "simon">
         <h2 id="level-title">Press A Key to Start</h2>
         <div class="simon-content">
@@ -94,7 +112,7 @@
         });
 
         function startGame() {
-            if (gameRunning)
+            if (!$("#active").is(":checked") || gameRunning)
                 return;
             gameRunning = true;
             pattern = [];
@@ -142,6 +160,8 @@
         }
 
         function buttonSFX(button) {
+            if (!$("#sound-on").is(":checked"))
+                return;
             let sound = audio[button];
             if (sound === null) {
                 sound = new Audio(`sounds/${button}.mp3`);
