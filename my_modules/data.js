@@ -8,7 +8,8 @@ Post = mongoose.model("Post", {
     content: String,
     url: String,
     date: Date,
-    category: String
+    category: String,
+    cat_extended_descript: String
 });
 
 module.exports.findAll = (callback) =>
