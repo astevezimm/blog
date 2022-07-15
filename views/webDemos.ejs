@@ -177,7 +177,67 @@
 </div>
 
 <div class="section even">
-    <h1>Mad Lib</h1>
+    <h1>Mad Lib Using ReactJS</h1>
+    
+    <style>
+        form.madlib-form {
+            position: relative;
+            width: 600px;
+            margin: 0 auto 20px auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 7px;
+            box-shadow: 0 1px 5px rgb(138, 137, 137);
+        }
+        @media (max-width: 767px) {
+            form.madlib-form {
+                width: 450px;
+            }
+        }
+        form.madlib-form input,
+        form.madlib-form textarea {
+            width: 100%;
+            border: none;
+            padding: 4px;
+            outline: none;
+            font-size: 1.2em;
+            font-family: inherit;
+            resize: none;
+        }
+        form.madlib-form button {
+            position: absolute;
+            right: 18px;
+            bottom: -18px;
+            background: #FF9F29;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            outline: none;
+        }
+        .error-text {
+            color: red;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        .error-input::placeholder {
+            color: red;
+        }
+        .reset-btn {
+            width: 50px !important;
+        }
+        pre {
+            font-size: 1.75rem;
+        }
+    </style>
+
+    <h4><strong>Instructions:</strong> Use form below to draft up a Mab Lib. Use [] to define word needed <em>(e.g. A [noun] walked up to me.)</em>. Or if you want use same word multiple times, include comma followed by a id in defition <em>(e.g. A [noun, 0] walked up to me. That [noun, 0] told me...)</em>. On submitting, a form will be generated to fill words, then next the finished story.</em></h4>
+    <div id="root"></div>
+    <script defer="defer" src="js/main.9fb090fa.js"></script>
 </div>
 
 <%- include("partials/footer") -%>
