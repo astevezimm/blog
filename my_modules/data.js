@@ -1,7 +1,7 @@
 ﻿const mongoose = require("mongoose");
 const _ = require("lodash");
 
-mongoose.connect("mongodb://localhost:27017/blogDB");
+mongoose.connect("mongodb+srv://astevegrim:BL0f0d11hcam1@cluster0.czig1.mongodb.net/blogDB");
 
 Post = mongoose.model("Post", {
     title: String,
