@@ -10,7 +10,7 @@
                     <h3><%= posts[i].title %></h3>
                     <h4><%= posts[i].date.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %></h4>
                     <h4 class="category"><em>Category: <%= posts[i].category %></em></h4>
-                    <img width="95%" src=<%="images/blog/i" + String(i).padStart(3, '0') + ".png"%> alt="post image">
+                    <img width="95%" src=<%="images/blog/i" + String(posts.length-i-1).padStart(3, '0') + ".png"%> alt="post image">
                 </div>
             </a>
         </div>
