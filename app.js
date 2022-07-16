@@ -16,6 +16,7 @@ app.get("/", (req, res) =>{
 })
 
 app.get("/blog", (req, res) =>{
+  console.log("loading blog")
   data.findAll((posts) => { res.render("blog", {posts: posts}); });
 })
 
