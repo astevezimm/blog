@@ -1,5 +1,6 @@
 ﻿function offset() {
-    $(".content").css("margin-top", $(".header").height());
+    const height = window.innerHeight <= 600 ? 0 : $(".header").height(); 
+    $(".content").css("margin-top", height);
     const iframe = $("iframe");
     if (iframe)
         iframe.height(iframe.width() * 0.625);
