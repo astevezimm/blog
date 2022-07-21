@@ -148,7 +148,7 @@
             if (isMobile) {
                 const startBtn = $(".start-btn")
                 startBtn.css("display", "block");
-                startBtn.click(startGame);
+                startBtn.click(() => setTimeout(startGame, 500));
             }
             else {
                 $("#level-title").css("display", "block");
