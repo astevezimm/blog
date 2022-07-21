@@ -130,6 +130,7 @@
         
         $(() => {
             $(document).keydown(startGame);
+            $(".simon").on("taphold", startGame);
             $(".simon-btn").click(function(){ validateInput(this.id) });
         });
 
