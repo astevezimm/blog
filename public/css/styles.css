@@ -119,6 +119,7 @@ a:hover {
     border-radius: 25%;
     margin-top: 20px;
     margin-bottom: 100px;
+    box-shadow: 1px 1px 4px black;
 }
 .skills h1 {
     text-align: center;
