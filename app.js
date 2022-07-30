@@ -16,7 +16,7 @@ app.get("/", (req, res) =>{
 })
 
 app.get("/blog", (req, res) =>{
-  data.findAll((posts, cats) => { res.render("blog", {posts: posts, cats: cats}); });
+  data.findAll((posts, cats) => { res.render("blog", {posts: posts, cats: cats, current_cat_url: ""}); });
 })
 
 app.get("/web-demos", (req, res) =>{
@@ -43,7 +43,8 @@ app.get("/posts/:title/next", (req, res) => {
 })
 
 app.get("/categories/:category", (req, res) =>{
-  data.findByCategory(req.params.category, (posts, cats) => res.render("blog", {posts: posts, cats: cats}));
+  data.findByCategory(req.params.category, 
+      (posts, cats) => res.render("blog", {posts: posts, cats: cats, current_cat_url: req.params.category}));
 })
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

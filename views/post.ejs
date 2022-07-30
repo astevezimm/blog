@@ -3,7 +3,7 @@
                                 subTitle: post.title}) -%>
 <h4><a href="/posts/<%= post.url %>/prev">&lt; Prev</a><a style="float: right" href="/posts/<%= post.url %>/next">Next &gt;</a></h4>
 <h3><%=post.date.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})%></h3>
-<h3 class="post-cat"><em>Category: <%=post.category%></em></h3>
+<h3 class="post-cat"><em>Category: <a href="/categories/<%= post.cat_url %>"><%=post.category%></a></em></h3>
 <h3 class="post-cat"><em><%=post.cat_extended_descript%></em></h3>
 <div class="blog-content"><p><%- post.content %></p></div>
 <h4><a href="/posts/<%= post.url %>/prev">&lt; Prev</a><a style="float: right" href="/posts/<%= post.url %>/next">Next &gt;</a></h4>

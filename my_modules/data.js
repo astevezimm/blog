@@ -17,7 +17,7 @@ Post = mongoose.model("Post", {
 async function findCats() {
     const cats = await Post.find({}).select(["category", "cat_url"]);
     let uniqueCats = [];
-    for (cat of cats)
+    for (let cat of cats)
         if (!uniqueCats.find(val => cat.category === val.category))
             uniqueCats.push(cat);
     return uniqueCats;
@@ -26,7 +26,7 @@ async function findCats() {
 module.exports.findAll = async (callback) =>
 {
     const posts = await Post.find({}).sort({date: 'desc'});
-    callback(posts, findCats());
+    callback(posts, await findCats());
 }
 
 module.exports.findOne = (title, callback) => {
@@ -74,5 +74,5 @@ module.exports.findNext = (title, callback) => {
 
 module.exports.findByCategory = async (category, callback) => {
     const posts = await Post.find({cat_url: category}).sort({date: 'desc'});
-    callback(posts, findCats());
+    callback(posts, await findCats());
 }

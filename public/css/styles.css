@@ -180,6 +180,18 @@ a:hover {
     }
 }
 
+.categories {
+    margin-bottom: 20px;
+}
+.cat-link {
+    margin-top: 0;
+}
+.cat-current {
+    color: #173753;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px #FAF3E3;
+}
+
 .post {
     text-shadow: 1px 1px 2px black;
     color: #dacba8;
