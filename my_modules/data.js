@@ -11,7 +11,8 @@ Post = mongoose.model("Post", {
     date: Date,
     category: String,
     cat_extended_descript: String,
-    cat_url: String
+    cat_url: String,
+    img_url: String
 });
 
 async function findCats() {
