@@ -17,7 +17,7 @@ Post = mongoose.model("Post", {
 async function findCats() {
     const cats = await Post.find({}).select(["category", "cat_url"]);
     let uniqueCats = [];
-    for (cat of cats.map(cat => ({category: cat.category, cat_url:cat.cat_url})))
+    for (cat of cats)
         if (!uniqueCats.find(val => cat.category === val.category))
             uniqueCats.push(cat);
     return uniqueCats;
