@@ -93,6 +93,7 @@ a:hover {
 
 .content {
     flex-grow: 1;
+    animation: content-appear 1s ease-out forwards;
 }
 .content h1 {
     text-shadow: 1px 1px 2px black;
@@ -101,6 +102,16 @@ a:hover {
     background-image: linear-gradient(to right, #FF9F29, #FAF3E3);
     padding: 10px;
     border-radius: 20% 0 0 20%;
+}
+@keyframes content-appear {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .profile {
