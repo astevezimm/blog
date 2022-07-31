@@ -242,6 +242,25 @@ a:hover {
     }
 }
 
+.page-not-found {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+    font-size: 7rem;
+    background-color: #FF9F29;
+    color: #FAF3E3;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px #948b75;
+    text-shadow: 1px 1px 3px #948b75;;
+}
+@media (max-width: 767px) {
+    .page-not-found {
+        width: 100%;
+        padding: 0;
+    }
+}
+
 .footer {
 	text-align: center;
 	bottom: 0;

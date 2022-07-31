@@ -50,10 +50,15 @@ app.get("/categories/:category", (req, res) => {
   res.redirect(`/categories/${req.params.category}/1`)
 })
 
-app.get("/categories/:category/:page", (req, res) =>{
+app.get("/categories/:category/:page", (req, res) => {
   data.findByCategory(req.params.category, req.params.page,(posts, cats, overallSize) => {
     res.render("blog", {posts: posts, cats: cats, current_cat_url: req.params.category, overallSize: overallSize})
   });
+})
+
+app.get("/*", (req, res) => {
+  res.status(404);
+  res.render("pageNotFound");
 })
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
