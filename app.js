@@ -15,8 +15,12 @@ app.get("/", (req, res) =>{
   res.render("home");
 })
 
-app.get("/blog", (req, res) =>{
-  data.findAll((posts, cats) => { res.render("blog", {posts: posts, cats: cats, current_cat_url: ""}); });
+app.get("/blog", (req, res) => { res.redirect("/blog/1") })
+
+app.get("/blog/:page", (req, res) => {
+  data.findAll(req.params.page, (posts, cats, overallSize) => {
+    res.render("blog", {posts: posts, cats: cats, current_cat_url: "", overallSize: overallSize});
+  });
 })
 
 app.get("/web-demos", (req, res) =>{
@@ -42,9 +46,14 @@ app.get("/posts/:title/next", (req, res) => {
       res.render("post", {post}));
 })
 
-app.get("/categories/:category", (req, res) =>{
-  data.findByCategory(req.params.category, 
-      (posts, cats) => res.render("blog", {posts: posts, cats: cats, current_cat_url: req.params.category}));
+app.get("/categories/:category", (req, res) => {
+  res.redirect(`/categories/${req.params.category}/1`)
+})
+
+app.get("/categories/:category/:page", (req, res) =>{
+  data.findByCategory(req.params.category, req.params.page,(posts, cats, overallSize) => {
+    res.render("blog", {posts: posts, cats: cats, current_cat_url: req.params.category, overallSize: overallSize})
+  });
 })
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

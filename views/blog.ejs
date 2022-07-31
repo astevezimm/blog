@@ -34,7 +34,13 @@
     <% } %>
 </div>
 
-<% if (posts.length >= 24) { %><h3>Pages: <a>1</a>, <a>2</a>, <a>3</a></h3><% } %>
+<% if (overallSize > 24) { %>
+    <h3>Pages: <% for (let i = 1; i <= Math.ceil(overallSize / 24); i++) { %>
+                    <a href="/blog/<%= i %>">
+                        <%= i %></a><% if (i < Math.ceil(overallSize / 24)) { %>,<% } %>
+                <% } %>
+    </h3>
+<% } %>
 
 <div class="blog-bottom"></div>
 

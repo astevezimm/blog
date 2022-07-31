@@ -24,10 +24,19 @@ async function findCats() {
     return uniqueCats;
 }
 
-module.exports.findAll = async (callback) =>
+function getPage(posts, page) {
+    if (isNaN(page) || page < 1)
+        page = 1;
+    else if (page * 24 > posts.length)
+        page = Math.ceil(posts.length / 24);
+    let start = (page - 1) * 24, end = page * 24;
+    return posts.slice(start, end);
+}
+
+module.exports.findAll = async (page, callback) =>
 {
     const posts = await Post.find({}).sort({date: 'desc'});
-    callback(posts, await findCats());
+    callback(getPage(posts, page), await findCats(), posts.length);
 }
 
 module.exports.findOne = (title, callback) => {
@@ -73,7 +82,7 @@ module.exports.findNext = (title, callback) => {
         });
 }
 
-module.exports.findByCategory = async (category, callback) => {
+module.exports.findByCategory = async (category, page, callback) => {
     const posts = await Post.find({cat_url: category}).sort({date: 'desc'});
-    callback(posts, await findCats());
+    callback(getPage(posts, page), await findCats(), posts.length);
 }
