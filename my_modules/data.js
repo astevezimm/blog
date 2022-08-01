@@ -16,12 +16,11 @@ Post = mongoose.model("Post", {
 });
 
 async function findCats() {
-    const cats = await Post.find({}).select(["category", "cat_url"]);
-    let uniqueCats = [];
-    for (let cat of cats)
-        if (!uniqueCats.find(val => cat.category === val.category))
-            uniqueCats.push(cat);
-    return uniqueCats;
+    return await Post.aggregate([{$group: {
+        _id: "$category",
+        category: {$first: "$category"},
+        cat_url: {$first: "$cat_url"}
+    }}]);
 }
 
 function getPage(posts, page) {
