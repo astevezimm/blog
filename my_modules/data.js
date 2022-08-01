@@ -20,7 +20,7 @@ async function findCats() {
         _id: "$category",
         category: {$first: "$category"},
         cat_url: {$first: "$cat_url"}
-    }}]);
+    }}, {$sort: {category : 1 }}]);
 }
 
 function getPage(posts, page) {
