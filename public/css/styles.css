@@ -293,3 +293,14 @@ a:hover {
 .publish-button {
     margin-top: 20px;
 }
+
+.udemy {
+    overflow-y: auto;
+    height: 175px;
+}
+
+@media screen and (max-width: 991px) {
+    .udemy {
+        height: auto;
+    }
+}
